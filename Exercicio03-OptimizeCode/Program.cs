@@ -12,7 +12,7 @@ public class Teste
         
         Matrix a = new Matrix(array1); //converte a array 2d em unidimensional na classe Matrix
         Matrix b = new Matrix(array2); 
-        var result = Exercise.Multiply(a, b); //realiza a multiplicação de ambas as matrizes
+        var result = Exercise.Multiply(a, b); 
         
         for (int i = 0; i < result.Rows; i++) //for passando por cada linha
         {
@@ -65,14 +65,14 @@ public static class Exercise
     public static Matrix Multiply(Matrix a, Matrix b)
     {
         var result = new Matrix(new int[a.Rows, b.Columns]);
-        for (int i = 0; i < result.Rows; i++)
+        for (int i = 0; i < result.Rows; i++) //for passando pelas linhas
         {
-            for (int j = 0; j < result.Columns; j++)
+            for (int j = 0; j < result.Columns; j++) //for passando pelas colunas
             {
-                result[i, j] = 0;
+                result[i, j] = 0; //resultado da multiplicação inicializado
                 for (int k = 0; k < a.Columns; k++)
                 {
-                    result[i, j] += (a[i, k] * b[k, j]);
+                    result[i, j] += (a[i, k] * b[k, j]); //realiza a multiplicação dos valores da matriz
                 }
             }
         }
